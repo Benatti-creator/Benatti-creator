@@ -171,13 +171,13 @@ function terminal(C, t) {
   b += `</svg>`; return b
 }
 
-function button(label, C, t, glyph) {
+function button(label, C, t, glyph, pending = false) {
   const w = Math.round(58 + label.length * 9.6), h = 44
   let b = head(w, h, C)
   b += panel(1, 1, w - 2, h - 2, C, { r: 10, fill: C.panel, stroke: C.line2, sw: 1.5 })
-  b += `<rect x="1" y="1" width="4" height="${h - 2}" rx="2" fill="url(#acc)"/>`
-  b += T(20, h / 2 + 4.5, 13.5, glyph, { f: 'Mono', w: 700, fill: C.cyan })
-  b += T(40, h / 2 + 4.5, 13.5, label, { f: 'Mono', w: 700, fill: C.ink, ls: 0.5 })
+  b += `<rect x="1" y="1" width="4" height="${h - 2}" rx="2" fill="${pending ? C.amber : 'url(#acc)'}"/>`
+  b += T(20, h / 2 + 4.5, 13.5, glyph, { f: 'Mono', w: 700, fill: pending ? C.amber : C.cyan })
+  b += T(40, h / 2 + 4.5, 13.5, label, { f: 'Mono', w: 700, fill: pending ? C.mut : C.ink, ls: 0.5 })
   b += `</svg>`; return b
 }
 
@@ -303,7 +303,7 @@ const sections = [
   ['sec-seguranca', '05', 'SEGURANÇA'], ['sec-contato', '06', 'CONTATO'],
 ]
 const buttons = [
-  ['btn-github', 'GitHub', '▸'], ['btn-whatsapp', 'WhatsApp', '✦'], ['btn-email', 'E-mail', '✉'],
+  ['btn-github', 'GitHub', '▸', false], ['btn-whatsapp', 'WhatsApp · em breve', '✦', true], ['btn-email', 'E-mail · em breve', '✉', true],
 ]
 
 let count = 0
@@ -315,8 +315,8 @@ for (const t of ['dark', 'light']) {
   for (const [name, num, label] of sections) {
     writeFileSync(join(OUT, `${name}-${t}.svg`), sectionHeader(num, label, C)); count++
   }
-  for (const [name, label, glyph] of buttons) {
-    writeFileSync(join(OUT, `${name}-${t}.svg`), button(label, C, t, glyph)); count++
+  for (const [name, label, glyph, pending] of buttons) {
+    writeFileSync(join(OUT, `${name}-${t}.svg`), button(label, C, t, glyph, pending)); count++
   }
   C_.trabalhos.forEach((d, i) => {
     writeFileSync(join(OUT, `card-${['iplanet', 'isabella', 'jatahy'][i]}-${t}.svg`), card(d, i, C, t)); count++
