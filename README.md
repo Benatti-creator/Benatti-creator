@@ -1,104 +1,46 @@
-<!-- Perfil gerado a partir de SVGs (tools/gera.mjs). Edite os textos em tools/gera.mjs e rode: node tools/gera.mjs -->
+<!-- Perfil no visual do portfólio Terra // Código (benatti-creator.github.io/terra-codigo).
+     As imagens saem de tools/perfil.html: edite lá e rode `node tools/gerar.cjs`. -->
 
 <div align="center">
 
-<picture>
-  <source media="(prefers-color-scheme: light)" srcset="./assets/banner-light.svg">
-  <img src="./assets/banner-dark.svg" alt="Cauã Benatti — Benatti & Benatti. Segurança e desenvolvimento. Pentest web autorizado, criação de sites, cardápios e catálogos online. Jataí-GO, sudoeste goiano." width="100%">
-</picture>
-
-<picture>
-  <source media="(prefers-color-scheme: light)" srcset="./assets/terminal-light.svg">
-  <img src="./assets/terminal-dark.svg" alt="whoami: Cauã Benatti, pentester e dev em Jataí-GO. Venho da segurança ofensiva. Faço sites que já nascem protegidos." width="100%">
-</picture>
+<a href="https://benatti-creator.github.io/terra-codigo/"><img src="./assets/banner.png" width="100%" alt="Cauã Assis Benatti — Entre a terra e o código. Estudante de Agronomia e desenvolvedor de software. Transformando problemas reais em soluções digitais. Tecnologia para o agro, software sob medida, cibersegurança e criação de sites. Jataí, GO."></a>
 
 <br><br>
 
-<a href="https://github.com/Benatti-creator"><picture><source media="(prefers-color-scheme: light)" srcset="./assets/btn-github-light.svg"><img src="./assets/btn-github-dark.svg" alt="GitHub" height="34"></picture></a>&nbsp;
-<picture><source media="(prefers-color-scheme: light)" srcset="./assets/btn-whatsapp-light.svg"><img src="./assets/btn-whatsapp-dark.svg" alt="WhatsApp (número em breve)" height="34"></picture>&nbsp;
-<picture><source media="(prefers-color-scheme: light)" srcset="./assets/btn-email-light.svg"><img src="./assets/btn-email-dark.svg" alt="E-mail (em breve)" height="34"></picture>
+<a href="https://benatti-creator.github.io/terra-codigo/"><img src="./assets/btn-portfolio.png" height="40" alt="Ver o portfólio"></a>&nbsp;<a href="https://wa.me/5564999427458?text=Ol%C3%A1%2C%20Cau%C3%A3!%20Vi%20seu%20GitHub%20e%20queria%20conversar%20sobre%20um%20projeto."><img src="./assets/btn-whatsapp.png" height="40" alt="WhatsApp"></a>&nbsp;<a href="mailto:cauaab505@gmail.com?subject=Contato%20pelo%20GitHub"><img src="./assets/btn-email.png" height="40" alt="E-mail"></a>
 
 </div>
 
 <br>
 
-<picture>
-  <source media="(prefers-color-scheme: light)" srcset="./assets/sec-sobre-light.svg">
-  <img src="./assets/sec-sobre-dark.svg" alt="01 // Sobre" width="100%">
-</picture>
-
-<picture>
-  <source media="(prefers-color-scheme: light)" srcset="./assets/sobre-light.svg">
-  <img src="./assets/sobre-dark.svg" alt="Trabalho com segurança ofensiva — pentest de aplicações web, sempre com autorização e escopo. Foi daí que entrei no desenvolvimento: hoje crio sites, cardápios e catálogos online e ferramentas sob medida. A diferença é que eu construo já pensando em quem vai tentar invadir. Atendo Jataí e o sudoeste goiano, e trabalho remoto pro Brasil inteiro." width="100%">
-</picture>
-
-<br><br>
-
-<picture>
-  <source media="(prefers-color-scheme: light)" srcset="./assets/sec-servicos-light.svg">
-  <img src="./assets/sec-servicos-dark.svg" alt="02 // Serviços" width="100%">
-</picture>
-
-<picture>
-  <source media="(prefers-color-scheme: light)" srcset="./assets/servicos-light.svg">
-  <img src="./assets/servicos-dark.svg" alt="Criação de sites: site rápido, bonito e feito pra vender, com código limpo, SEO e celular em primeiro lugar. Cardápios e catálogos online: vitrine com pedido direto no WhatsApp, pra restaurante, loja e serviço local. Cibersegurança: pentest web autorizado e proteção de site. Desenvolvimento sob medida: automação, painel, integração e ferramenta interna." width="100%">
-</picture>
-
-<br><br>
-
-<picture>
-  <source media="(prefers-color-scheme: light)" srcset="./assets/sec-stack-light.svg">
-  <img src="./assets/sec-stack-dark.svg" alt="03 // Stack & ferramentas" width="100%">
-</picture>
-
-<picture>
-  <source media="(prefers-color-scheme: light)" srcset="./assets/stack-light.svg">
-  <img src="./assets/stack-dark.svg" alt="Segurança: Burp Suite, Nmap, Wireshark, OWASP, Linux, Bash. Web: HTML, CSS, JavaScript, Node.js, SEO, Git. Dev: Python, APIs e MCP, SQLite, automação." width="100%">
-</picture>
-
-<br><br>
-
-<picture>
-  <source media="(prefers-color-scheme: light)" srcset="./assets/sec-trabalhos-light.svg">
-  <img src="./assets/sec-trabalhos-dark.svg" alt="04 // Trabalhos" width="100%">
-</picture>
+<img src="./assets/sec-projetos.png" width="100%" alt="01 — Projetos. Telas reais; clique para abrir o case.">
 
 <p align="center">
-<a href="https://benatti-creator.github.io/previas/iplanet-store/"><picture><source media="(prefers-color-scheme: light)" srcset="./assets/card-iplanet-light.svg"><img src="./assets/card-iplanet-dark.svg" alt="iPlanet Store (cliente): loja de iPhone e assistência técnica. Catálogo, montador de orçamento e pedido no WhatsApp. Ver ao vivo." width="49%"></picture></a>
-<a href="https://benatti-creator.github.io/previas/isabella-ribeiro-biomedica/"><picture><source media="(prefers-color-scheme: light)" srcset="./assets/card-isabella-light.svg"><img src="./assets/card-isabella-dark.svg" alt="Isabella Ribeiro (cliente, Jataí-GO): site de autoridade pra biomédica esteta, com agendamento no WhatsApp, SEO e nota 5,0 no Google. Ver ao vivo." width="49%"></picture></a>
+<a href="https://benatti-creator.github.io/terra-codigo/projetos/lavra/"><img src="./assets/card-lavra.png" width="49%" alt="01 · Lavra — Sistema de gestão para o agronegócio. Propriedades, talhões, safras e estoque de insumos num lugar só, no computador e no celular. Em desenvolvimento, fase piloto. Ver o case."></a> <a href="https://benatti-creator.github.io/terra-codigo/projetos/decoder/"><img src="./assets/card-decoder.png" width="49%" alt="02 · Decoder — Carreiras Policiais. Plataforma de estudo para concursos, com um banco de milhares de questões e cada uma explicada passo a passo. No ar. Ver o case."></a>
 </p>
 
 <p align="center">
-<a href="https://benatti-creator.github.io/previas/jatahy-dreams-eventos/"><picture><source media="(prefers-color-scheme: light)" srcset="./assets/card-jatahy-light.svg"><img src="./assets/card-jatahy-dark.svg" alt="Jatahy Dreams Eventos (cliente, Jataí-GO): salão de festas, com consulta de data e orçamento no WhatsApp, foto do espaço e avaliações. Ver ao vivo." width="49%"></picture></a>
+<a href="https://benatti-creator.github.io/terra-codigo/projetos/sentinela/#laboratorio"><img src="./assets/card-sentinela.png" width="49%" alt="03 · Sentinela — Auditoria defensiva de aplicações web. Laboratório que roda no navegador com alvo fictício e as verificações do PentestBot Web. Simulação. Abrir o laboratório."></a> <a href="https://benatti-creator.github.io/terra-codigo/projetos/cris-assis/"><img src="./assets/card-cris.png" width="49%" alt="04 · Cris Assis — Site de portfólio para tatuadora em Lisboa, com o pedido montado direto para a DM do Instagram. Prévia no ar. Ver o case."></a>
 </p>
+
+<p align="center"><sub>Outros sites: <a href="https://benatti-creator.github.io/previas/iplanet-store/">iPlanet Store</a> · <a href="https://benatti-creator.github.io/previas/isabella-ribeiro-biomedica/">Isabella Ribeiro</a> · <a href="https://benatti-creator.github.io/previas/jatahy-dreams-eventos/">Jatahy Dreams Eventos</a></sub></p>
 
 <br>
 
-<picture>
-  <source media="(prefers-color-scheme: light)" srcset="./assets/sec-seguranca-light.svg">
-  <img src="./assets/sec-seguranca-dark.svg" alt="05 // Segurança" width="100%">
-</picture>
+<img src="./assets/sec-competencias.png" width="100%" alt="02 — Competências. Cada área diz onde foi usada.">
 
-<picture>
-  <source media="(prefers-color-scheme: light)" srcset="./assets/seguranca-light.svg">
-  <img src="./assets/seguranca-dark.svg" alt="Seu site nasce protegido. Todo site que eu entrego passa por uma revisão de segurança antes de ir pro ar: headers de segurança, formulário sem injeção, dependências atualizadas, dados do cliente fora de risco, HTTPS e back-up. Pentest completo de um sistema seu só com contrato e escopo definido." width="100%">
-</picture>
+<a href="https://benatti-creator.github.io/terra-codigo/#competencias"><img src="./assets/competencias.png" width="100%" alt="T-01 Frontend: TypeScript, React, Next.js, Tailwind CSS, HTML, CSS e JavaScript. T-02 Backend: Node.js, Python, rotas de API, sessões assinadas. T-03 Arquitetura e infra: módulos por domínio, verificações de arquitetura, Git, manutenção e suporte. T-04 Dados: SQL, PostgreSQL, Prisma, Python para análise, Power BI. T-05 Automação e integrações: Excel (Power Query), Mercado Pago, Playwright, IA como apoio. T-06 Agro e pesquisa: talhões e safras, estoque de insumos, bovinos em confinamento, laboratório de pesquisa. T-07 Segurança de aplicações: cabeçalhos e TLS, autenticação e sessões, OWASP Top 10, PentestBot Web. T-08 Criação de sites: UI e direção de arte, GSAP e ScrollTrigger, responsividade, desempenho e SEO."></a>
 
 <br><br>
 
-<picture>
-  <source media="(prefers-color-scheme: light)" srcset="./assets/sec-contato-light.svg">
-  <img src="./assets/sec-contato-dark.svg" alt="06 // Contato" width="100%">
-</picture>
+<img src="./assets/sec-sobre.png" width="100%" alt="03 — Sobre.">
 
-<picture>
-  <source media="(prefers-color-scheme: light)" srcset="./assets/contato-light.svg">
-  <img src="./assets/contato-dark.svg" alt="Vamos conversar. Orçamento, uma dúvida ou um site pra tirar do papel — me chama. Respondo de Jataí-GO. WhatsApp (número em breve), e-mail (em breve), atendo Jataí, Rio Verde e Mineiros." width="100%">
-</picture>
+<a href="https://benatti-creator.github.io/terra-codigo/#sobre"><img src="./assets/sobre.png" width="100%" alt="Sou estudante de Agronomia na Universidade Federal de Jataí e técnico em Manutenção e Suporte em Informática pelo IFG. Comecei a programar fazendo um jogo 2D durante a pandemia e não parei mais. Na pesquisa aprendo a olhar o problema onde ele acontece; na programação, a transformar isso em regra, dado e tela. Desde 2023 desenvolvo sites e sistemas sob medida. Hoje construo o Lavra, um sistema de gestão para o agro, e trabalho com sites, sistemas e cibersegurança pela Assis&Benatti. Agronomia na UFJ (previsão 2030), Técnico em Informática pelo IFG (concluído), Laboratório de Plantas Daninhas da UFJ (atual)."></a>
 
 <br><br>
 
-<picture>
-  <source media="(prefers-color-scheme: light)" srcset="./assets/rodape-light.svg">
-  <img src="./assets/rodape-dark.svg" alt="Cauã Benatti · Benatti & Benatti · Jataí-GO · sudoeste goiano" width="100%">
-</picture>
+<img src="./assets/sec-contato.png" width="100%" alt="04 — Contato.">
+
+<a href="https://benatti-creator.github.io/terra-codigo/#contato"><img src="./assets/contato.png" width="100%" alt="Boas ideias merecem sair do papel. E-mail: cauaab505@gmail.com. WhatsApp: (64) 99942-7458. Portfólio: benatti-creator.github.io/terra-codigo."></a>
+
+<img src="./assets/rodape.png" width="100%" alt="Cauã Assis Benatti · Assis&Benatti · Jataí — GO · 2026">

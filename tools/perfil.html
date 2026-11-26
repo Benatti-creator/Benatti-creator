@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Perfil — peças</title>
+<!-- Peças do perfil do GitHub, no visual do portfólio Terra // Código.
+     Cada elemento com data-peca vira um PNG em assets/ (node tools/gerar.cjs). -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:wdth,wght@75..100,400..700&display=block" rel="stylesheet">
+<style>
+  :root {
+    --preto: #080b0a; --floresta: #14211b; --lima: #b6e36c; --claro: #f0f3ea;
+    --mineral: #8b948d; --texto-2: #c2c8bf;
+    --linha: rgba(240, 243, 234, 0.12); --linha-forte: rgba(240, 243, 234, 0.26);
+    --display: "Archivo", "Arial Black", sans-serif;
+    --texto: "Instrument Sans", system-ui, sans-serif;
+    --mono: "IBM Plex Mono", ui-monospace, monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #2a2f2c; padding: 40px; display: flex; flex-direction: column; gap: 40px; align-items: flex-start; color: var(--claro); font-family: var(--texto); }
+  [data-peca] { background: var(--preto); position: relative; overflow: hidden; flex: none; }
+  .mono { font-family: var(--mono); text-transform: uppercase; letter-spacing: 0.1em; }
+  .lima { color: var(--lima); }
+  .curvas { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; -webkit-mask-image: linear-gradient(100deg, transparent 38%, #000 78%); mask-image: linear-gradient(100deg, transparent 38%, #000 78%); }
+
+  /* ---------- banner ---------- */
+  #banner { width: 1000px; height: 456px; padding: 34px 44px; }
+  .b-topo { display: flex; justify-content: space-between; align-items: baseline; position: relative; }
+  .marca { font-family: var(--display); font-variation-settings: "wdth" 125; font-weight: 800; font-size: 19px; letter-spacing: 0.04em; }
+  .marca small { font-family: var(--mono); font-weight: 400; font-size: 11px; letter-spacing: 0.18em; color: var(--mineral); margin-left: 12px; }
+  .b-topo .mono { font-size: 10.5px; color: var(--texto-2); }
+  .regua { height: 1px; background: var(--linha); margin: 16px 0 0; position: relative; }
+  .b-nome { margin-top: 46px; display: flex; align-items: center; gap: 14px; font-size: 13px; letter-spacing: 0.24em; position: relative; }
+  .b-nome i { width: 34px; height: 1px; background: var(--lima); display: block; }
+  .b-titulo { position: relative; margin-top: 14px; font-family: var(--display); font-variation-settings: "wdth" 118; font-weight: 800; text-transform: uppercase; font-size: 86px; line-height: 0.9; letter-spacing: -0.015em; }
+  .ponto { display: inline-block; width: 0.17em; height: 0.17em; background: var(--lima); margin-left: 0.04em; }
+  .b-frase { position: relative; margin-top: 22px; font-size: 19px; color: var(--texto-2); }
+  .frentes { position: relative; margin-top: 16px; display: flex; gap: 22px; font-size: 10.5px; color: var(--claro); }
+  .frentes span::before { content: "◆"; color: var(--lima); margin-right: 7px; font-size: 8px; vertical-align: 1px; }
+  .b-ficha { position: absolute; right: 44px; bottom: 34px; border: 1px solid var(--linha-forte); background: rgba(8, 11, 10, 0.82); padding: 12px 14px; font-size: 10px; line-height: 1.75; color: var(--texto-2); }
+  .b-ficha b { color: var(--lima); font-weight: 500; display: block; margin-bottom: 4px; }
+
+  /* ---------- botões ---------- */
+  .botao { height: 46px; padding: 0 22px; display: inline-flex; align-items: center; gap: 10px; font-family: var(--mono); font-size: 12.5px; letter-spacing: 0.1em; text-transform: uppercase; border: 1px solid var(--linha-forte); color: var(--claro); background: var(--preto); }
+  .botao--cheio { background: var(--claro); color: var(--preto); border-color: var(--claro); }
+
+  /* ---------- cabeçalho de seção ---------- */
+  .secao { width: 1000px; height: 64px; display: flex; align-items: center; gap: 18px; padding: 0 4px; background: var(--preto); }
+  .secao .n { font-family: var(--mono); font-size: 12px; color: var(--lima); letter-spacing: 0.12em; }
+  .secao h2 { font-family: var(--display); font-variation-settings: "wdth" 118; font-weight: 800; font-size: 30px; text-transform: uppercase; letter-spacing: -0.01em; }
+  .secao .fio { flex: 1; height: 1px; background: var(--linha); }
+  .secao .lado { font-size: 10.5px; color: var(--mineral); }
+
+  /* ---------- cartão de projeto ---------- */
+  .cartao { width: 490px; height: 524px; border: 1px solid var(--linha); display: flex; flex-direction: column; --acento: var(--lima); }
+  .cartao .tela { height: 268px; margin: 14px 14px 0; border: 1px solid var(--linha-forte); background: #111; overflow: hidden; position: relative; }
+  .cartao .tela::before { content: ""; display: block; height: 18px; background: #151a18; border-bottom: 1px solid var(--linha); }
+  .cartao .tela::after { content: "● ● ●"; position: absolute; top: 3px; left: 9px; font-size: 7px; letter-spacing: 2px; color: #4a524d; }
+  .cartao .tela img { width: 100%; height: calc(100% - 18px); object-fit: cover; object-position: top; display: block; }
+  .cartao .corpo { padding: 18px 22px 20px; display: flex; flex-direction: column; flex: 1; }
+  .cartao .linha1 { display: flex; justify-content: space-between; align-items: center; font-size: 10px; color: var(--mineral); }
+  .cartao .num { font-family: var(--display); font-variation-settings: "wdth" 125; font-weight: 800; font-size: 15px; color: var(--acento); letter-spacing: 0.02em; }
+  .cartao h3 { margin-top: 10px; font-family: var(--display); font-variation-settings: "wdth" 118; font-weight: 800; font-size: 38px; line-height: 0.95; text-transform: uppercase; letter-spacing: -0.015em; }
+  .cartao .sub { margin-top: 6px; font-size: 15px; font-weight: 600; color: var(--claro); }
+  .cartao p { margin-top: 10px; font-size: 13.5px; line-height: 1.5; color: var(--texto-2); }
+  .cartao .pe { margin-top: auto; display: flex; justify-content: space-between; align-items: center; }
+  .selo { display: inline-flex; align-items: center; gap: 8px; font-size: 9.5px; border: 1px solid var(--linha-forte); padding: 5px 9px; color: var(--claro); }
+  .selo i { width: 6px; height: 6px; border-radius: 50%; background: var(--lima); box-shadow: 0 0 8px var(--lima); display: block; }
+  .selo--vazado i { background: transparent; box-shadow: none; border: 1.5px solid var(--lima); }
+  .selo--simulacao i { background: transparent; box-shadow: none; border: 1.5px dashed var(--acento); }
+  .ver { font-size: 10.5px; color: var(--acento); border-bottom: 1px solid var(--acento); padding-bottom: 2px; }
+
+  /* ---------- competências ---------- */
+  #competencias { width: 1000px; padding: 6px 0 4px; }
+  .talhoes { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+  .talhao { border: 1px solid var(--linha); padding: 16px 16px 18px; min-height: 182px; position: relative; background:
+      repeating-linear-gradient(135deg, rgba(182, 227, 108, 0.035) 0 1px, transparent 1px 9px); }
+  .talhao::before, .talhao::after { content: ""; position: absolute; width: 9px; height: 9px; border-color: var(--lima); border-style: solid; }
+  .talhao::before { top: -1px; left: -1px; border-width: 1px 0 0 1px; }
+  .talhao::after { bottom: -1px; right: -1px; border-width: 0 1px 1px 0; }
+  .talhao .cod { font-size: 10px; color: var(--lima); }
+  .talhao h4 { margin-top: 8px; font-family: var(--display); font-variation-settings: "wdth" 112; font-weight: 800; font-size: 17px; line-height: 1.08; text-transform: uppercase; }
+  .talhao ul { margin-top: 10px; list-style: none; display: flex; flex-direction: column; gap: 4px; }
+  .talhao li { font-family: var(--mono); font-size: 10.5px; color: var(--texto-2); line-height: 1.35; }
+  .talhao li::before { content: "— "; color: var(--mineral); }
+
+  /* ---------- sobre ---------- */
+  #sobre { width: 1000px; height: 372px; display: grid; grid-template-columns: 1fr 300px; gap: 40px; padding: 26px 30px 26px 4px; }
+  #sobre p { font-size: 15.5px; line-height: 1.6; color: var(--texto-2); margin-bottom: 12px; }
+  #sobre p:first-child { font-size: 19px; color: var(--claro); line-height: 1.45; }
+  .formacao { margin-top: 18px; display: flex; gap: 26px; font-size: 10px; color: var(--mineral); line-height: 1.6; }
+  .formacao b { display: block; color: var(--claro); font-weight: 500; }
+  .retrato { position: relative; border: 1px solid var(--linha-forte); overflow: hidden; }
+  .retrato img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; filter: grayscale(1) contrast(1.05); display: block; }
+  .retrato .grade { position: absolute; inset: 0; background-image: radial-gradient(rgba(8, 11, 10, 0.9) 1.2px, transparent 1.4px); background-size: 6px 6px; -webkit-mask-image: linear-gradient(to bottom, transparent 55%, #000 100%); mask-image: linear-gradient(to bottom, transparent 55%, #000 100%); }
+  .retrato .legenda { position: absolute; left: 0; right: 0; bottom: 0; padding: 10px 12px; font-size: 9.5px; color: var(--claro); background: linear-gradient(to top, rgba(8, 11, 10, 0.92), transparent); }
+
+  /* ---------- contato ---------- */
+  #contato { width: 1000px; height: 360px; padding: 38px 44px; }
+  #contato h2 { position: relative; font-family: var(--display); font-variation-settings: "wdth" 118; font-weight: 800; text-transform: uppercase; font-size: 60px; line-height: 0.92; letter-spacing: -0.015em; }
+  .canais { position: relative; margin-top: 30px; display: grid; grid-template-columns: repeat(3, auto); justify-content: start; gap: 0 46px; }
+  .canais div { border-top: 1px solid var(--linha-forte); padding-top: 12px; min-width: 230px; }
+  .canais .mono { font-size: 10px; color: var(--mineral); }
+  .canais b { display: block; margin-top: 6px; font-family: var(--mono); font-weight: 500; font-size: 14px; color: var(--claro); }
+
+  /* ---------- rodapé ---------- */
+  #rodape { width: 1000px; height: 54px; display: flex; justify-content: space-between; align-items: center; padding: 0 4px; border-top: 1px solid var(--linha); font-size: 10px; color: var(--mineral); }
+</style>
+</head>
+<body>
+
+<!-- BANNER -->
+<section id="banner" data-peca="banner">
+  <svg class="curvas" data-curvas="banner" viewBox="0 0 1000 480" preserveAspectRatio="none"></svg>
+  <div class="b-topo">
+    <span class="marca">CAB<small>CAUÃ BENATTI</small></span>
+    <span class="mono">Estudante de Agronomia · Desenvolvedor de software</span>
+  </div>
+  <div class="regua"></div>
+  <div class="b-nome mono"><i></i>Cauã Assis Benatti</div>
+  <h1 class="b-titulo">Entre a terra<br>e o código<span class="ponto"></span></h1>
+  <p class="b-frase">Transformando problemas reais em soluções digitais.</p>
+  <div class="frentes mono"><span>Tecnologia para o agro</span><span>Software sob medida</span><span>Cibersegurança</span><span>Criação de sites</span></div>
+  <div class="b-ficha mono"><b>Base</b>Jataí — GO<br>UFJ · Agronomia<br>Assis&amp;Benatti</div>
+</section>
+
+<!-- BOTÕES -->
+<div data-peca="btn-portfolio" style="background:none"><span class="botao botao--cheio">Ver o portfólio <span>↗</span></span></div>
+<div data-peca="btn-whatsapp" style="background:none"><span class="botao">WhatsApp <span>↗</span></span></div>
+<div data-peca="btn-email" style="background:none"><span class="botao">E-mail <span>↗</span></span></div>
+
+<!-- SEÇÕES -->
+<div class="secao" data-peca="sec-projetos"><span class="n">01 —</span><h2>Projetos</h2><span class="fio"></span><span class="lado mono">Telas reais · clique para abrir o case</span></div>
+<div class="secao" data-peca="sec-competencias"><span class="n">02 —</span><h2>Competências</h2><span class="fio"></span><span class="lado mono">Cada área diz onde foi usada</span></div>
+<div class="secao" data-peca="sec-sobre"><span class="n">03 —</span><h2>Sobre</h2><span class="fio"></span><span class="lado mono">Agronomia · UFJ · IFG</span></div>
+<div class="secao" data-peca="sec-contato"><span class="n">04 —</span><h2>Contato</h2><span class="fio"></span><span class="lado mono">Jataí — GO · remoto</span></div>
+
+<!-- CARTÕES -->
+<article class="cartao" data-peca="card-lavra">
+  <div class="tela"><img src="fontes/lavra.webp" alt="" style="object-position: left top"></div>
+  <div class="corpo">
+    <div class="linha1 mono"><span class="num">01</span><span>Agro · Sistema web · 2026</span></div>
+    <h3>Lavra</h3>
+    <div class="sub">Sistema de gestão para o agronegócio</div>
+    <p>Propriedades, talhões, safras e estoque de insumos num lugar só. No computador e no celular, sem baixar aplicativo.</p>
+    <div class="pe"><span class="selo selo--vazado mono"><i></i>Em desenvolvimento · fase piloto</span><span class="ver mono">Ver o case ↗</span></div>
+  </div>
+</article>
+
+<article class="cartao" data-peca="card-decoder" style="--acento: #e8e2c8">
+  <div class="tela"><img src="fontes/decoder.webp" alt=""></div>
+  <div class="corpo">
+    <div class="linha1 mono"><span class="num">02</span><span>Educação · Plataforma web · 2026</span></div>
+    <h3>Decoder</h3>
+    <div class="sub">Carreiras Policiais</div>
+    <p>Plataforma de estudo para concursos de carreiras policiais, com um banco de milhares de questões e cada uma explicada passo a passo.</p>
+    <div class="pe"><span class="selo mono"><i></i>No ar</span><span class="ver mono">Ver o case ↗</span></div>
+  </div>
+</article>
+
+<article class="cartao" data-peca="card-sentinela" style="--acento: #78d6dc">
+  <div class="tela"><img src="fontes/sentinela.png" alt="" style="object-position: 0 -24px; height: calc(100% - 18px + 24px)"></div>
+  <div class="corpo">
+    <div class="linha1 mono"><span class="num">03</span><span>Cibersegurança · Case demonstrativo</span></div>
+    <h3>Sentinela</h3>
+    <div class="sub">Auditoria defensiva de aplicações web</div>
+    <p>Uma auditoria que você roda no navegador: alvo fictício, as verificações do PentestBot Web e cada achado virando orientação de correção.</p>
+    <div class="pe"><span class="selo selo--simulacao mono"><i></i>Simulação · alvo fictício</span><span class="ver mono">Abrir o laboratório ↗</span></div>
+  </div>
+</article>
+
+<article class="cartao" data-peca="card-cris" style="--acento: #e2483f">
+  <div class="tela"><img src="fontes/cris.webp" alt=""></div>
+  <div class="corpo">
+    <div class="linha1 mono"><span class="num">04</span><span>Criação de sites · Cliente · 2026</span></div>
+    <h3>Cris Assis</h3>
+    <div class="sub">Site de portfólio para tatuadora</div>
+    <p>Tatuagem tradicional em primeiro plano, estética de adesivo e cartaz antigo, e o pedido montado direto para a DM do Instagram.</p>
+    <div class="pe"><span class="selo mono"><i></i>Prévia no ar</span><span class="ver mono">Ver o case ↗</span></div>
+  </div>
+</article>
+
+<!-- COMPETÊNCIAS -->
+<section id="competencias" data-peca="competencias">
+  <div class="talhoes">
+    <div class="talhao"><span class="cod mono">T-01</span><h4>Frontend</h4><ul><li>TypeScript · React</li><li>Next.js</li><li>Tailwind CSS</li><li>HTML, CSS, JS</li></ul></div>
+    <div class="talhao"><span class="cod mono">T-02</span><h4>Backend</h4><ul><li>Node.js</li><li>Python</li><li>Rotas de API</li><li>Sessões assinadas</li></ul></div>
+    <div class="talhao"><span class="cod mono">T-03</span><h4>Arquitetura e infra</h4><ul><li>Módulos por domínio</li><li>Verificações de arquitetura</li><li>Git</li><li>Manutenção e suporte</li></ul></div>
+    <div class="talhao"><span class="cod mono">T-04</span><h4>Dados</h4><ul><li>SQL · PostgreSQL</li><li>Prisma</li><li>Python para análise</li><li>Power BI</li></ul></div>
+    <div class="talhao"><span class="cod mono">T-05</span><h4>Automação e integrações</h4><ul><li>Excel (Power Query)</li><li>Mercado Pago</li><li>Playwright</li><li>IA como apoio</li></ul></div>
+    <div class="talhao"><span class="cod mono">T-06</span><h4>Agro e pesquisa</h4><ul><li>Talhões e safras</li><li>Estoque de insumos</li><li>Bovinos em confinamento</li><li>Laboratório de pesquisa</li></ul></div>
+    <div class="talhao"><span class="cod mono">T-07</span><h4>Segurança de aplicações</h4><ul><li>Cabeçalhos e TLS</li><li>Autenticação e sessões</li><li>OWASP Top 10</li><li>PentestBot Web</li></ul></div>
+    <div class="talhao"><span class="cod mono">T-08</span><h4>Criação de sites</h4><ul><li>UI e direção de arte</li><li>GSAP · ScrollTrigger</li><li>Responsividade</li><li>Desempenho e SEO</li></ul></div>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section id="sobre" data-peca="sobre">
+  <div>
+    <p>Sou estudante de Agronomia na Universidade Federal de Jataí e técnico em Manutenção e Suporte em Informática pelo IFG.</p>
+    <p>Comecei a programar fazendo um jogo 2D durante a pandemia e não parei mais. Na pesquisa aprendo a olhar o problema onde ele acontece; na programação, a transformar isso em regra, dado e tela.</p>
+    <p>Desde 2023 desenvolvo sites e sistemas sob medida. Hoje construo o Lavra, um sistema de gestão para o agro, e trabalho com sites, sistemas e cibersegurança pela Assis&amp;Benatti.</p>
+    <div class="formacao mono">
+      <span><b>Agronomia · UFJ</b>Em andamento · previsão 2030</span>
+      <span><b>Técnico em Informática · IFG</b>Concluído</span>
+      <span><b>LPD · UFJ</b>Plantas daninhas · atual</span>
+    </div>
+  </div>
+  <div class="retrato"><img src="fontes/caua.png" alt=""><div class="grade"></div><div class="legenda mono">Cauã Assis Benatti</div></div>
+</section>
+
+<!-- CONTATO -->
+<section id="contato" data-peca="contato">
+  <svg class="curvas" data-curvas="contato" viewBox="0 0 1000 360" preserveAspectRatio="none"></svg>
+  <h2>Boas ideias<br>merecem sair<br>do papel<span class="ponto"></span></h2>
+  <div class="canais">
+    <div><span class="mono">E-mail</span><b>cauaab505@gmail.com</b></div>
+    <div><span class="mono">WhatsApp</span><b>(64) 99942-7458</b></div>
+    <div><span class="mono">Portfólio</span><b>benatti-creator.github.io/terra-codigo</b></div>
+  </div>
+</section>
+
+<!-- RODAPÉ -->
+<div id="rodape" class="mono" data-peca="rodape"><span>Cauã Assis Benatti · Assis&amp;Benatti</span><span>Jataí — GO · 2026</span></div>
+
+<script>
+  // Curvas de nível: anéis deformados por senoides, como as do portfólio. Semente fixa: sai sempre igual.
+  function curvas(svg, cx, cy, rx, ry, n, fase) {
+    const ns = "http://www.w3.org/2000/svg";
+    for (let i = 0; i < n; i++) {
+      const k = 1 - i / n, pts = [];
+      for (let a = 0; a <= 360; a += 4) {
+        const t = (a * Math.PI) / 180;
+        const r = 1 + 0.09 * Math.sin(3 * t + fase + i * 0.21) + 0.05 * Math.sin(5 * t - fase * 1.7 + i * 0.13) + 0.025 * Math.sin(9 * t + i * 0.4);
+        pts.push(`${(cx + Math.cos(t) * rx * k * r).toFixed(1)},${(cy + Math.sin(t) * ry * k * r).toFixed(1)}`);
+      }
+      const p = document.createElementNS(ns, "polyline");
+      p.setAttribute("points", pts.join(" "));
+      p.setAttribute("fill", "none");
+      const forte = i % 4 === 0;
+      p.setAttribute("stroke", forte ? "rgba(182,227,108,0.42)" : "rgba(139,148,141,0.2)");
+      p.setAttribute("stroke-width", forte ? "1.1" : "0.8");
+      svg.appendChild(p);
+    }
+  }
+  curvas(document.querySelector('[data-curvas="banner"]'), 900, 470, 560, 380, 22, 0.6);
+  curvas(document.querySelector('[data-curvas="contato"]'), 930, 330, 480, 330, 18, 2.1);
+</script>
+</body>
+</html>

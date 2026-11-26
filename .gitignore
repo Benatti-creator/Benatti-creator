@@ -1,5 +1,4 @@
-# artefatos de build/preview (não vão para o repo do perfil)
-preview-dark.html
-preview-light.html
-tools/*.png
-tools/__pycache__/
+# artefatos locais (não vão para o repositório do perfil)
+node_modules/
+*.log
+previa-readme.html
